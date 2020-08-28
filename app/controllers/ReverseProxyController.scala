@@ -10,7 +10,8 @@ import scala.concurrent.ExecutionContext
 
 
 @Singleton
-class RootController @Inject()(cc: ControllerComponents, ws: WSClient)(implicit ec: ExecutionContext) extends RestTemplateController(cc, ws) {
+class ReverseProxyController @Inject()
+  (cc: ControllerComponents, ws: WSClient)(implicit ec: ExecutionContext) extends RestTemplateController(cc, ws) {
 
   
   override def reverseProxy(path: String) = Action.async(parse.raw) { 
