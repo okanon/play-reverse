@@ -57,7 +57,7 @@ abstract class RestTemplateController @Inject()
       }
     }
     .recover {
-      case _ => InternalServerError
+      case _ => BadGateway
     }
   }
 }
